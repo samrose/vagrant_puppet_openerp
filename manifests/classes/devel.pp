@@ -12,6 +12,7 @@ class devel {
 		ensure => installed,
 	}
 	  package { [
+    'bzr',
     'ghostscript',
     'graphviz',
     'libjpeg62-dev',
