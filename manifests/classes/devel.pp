@@ -11,7 +11,7 @@ class devel {
 	package { [postgresql,libpq-dev]:
 		ensure => installed,
 	}
-	  package { [
+  package { [
     'bzr',
     'ghostscript',
     'graphviz',
