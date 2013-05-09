@@ -49,9 +49,12 @@ echo ""
 
 cat > Vagrantfile <<EOF
 Vagrant::Config.run do |config|
+  config.vm.forward_port 8069, 3201
   config.vm.host_name = '${vgrthostname}'
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.provision :shell, :inline => "/usr/bin/apt-get update"
+  config.vm.provision :shell, :inline => "/usr/bin/apt-get upgrade"
   config.vm.provision :shell, :inline => "/usr/bin/apt-get install -y puppet libaugeas-ruby augeas-tools rubygems"
   config.vm.provision :puppet, :module_path => "modules", :options => "--verbose" do |puppet|
     puppet.manifests_path = "manifests"
