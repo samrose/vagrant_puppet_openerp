@@ -3,7 +3,7 @@ class python {
   package { 'python-virtualenv': ensure => installed }
   package { 'python-dev' : ensure => installed }
   package { [ 'python-dateutil', 
-              'python-docutils', '
+              'python-docutils', 
               'python-feedparser', 
               'python-gdata', 
               'python-jinja2', 
