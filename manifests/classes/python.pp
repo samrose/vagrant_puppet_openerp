@@ -32,3 +32,4 @@ class python {
               'python-zsi']:
                ensure => installed
   }
+}
